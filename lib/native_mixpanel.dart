@@ -7,6 +7,8 @@ import 'package:flutter/foundation.dart' show debugPrint;
 abstract class _Mixpanel {
 
   Future track(String eventName, [dynamic props]);
+
+  Future<String> getDistinctId();
 }
 
 class _MixpanelOptedOut extends _Mixpanel {
@@ -15,6 +17,11 @@ class _MixpanelOptedOut extends _Mixpanel {
     // nothing to do when opted out
     return Future.value();
   }
+
+  @override
+  Future<String> getDistinctId() {
+    return Future.value('');
+  }
 }
 
 class _MixpanelOptedIn extends _Mixpanel {
@@ -22,6 +29,11 @@ class _MixpanelOptedIn extends _Mixpanel {
 
   Future track(String eventName, [dynamic props]) async {
     return await _channel.invokeMethod(eventName, props);
+  }
+
+  @override
+  Future<String> getDistinctId() async {
+    return await _channel.invokeMethod("getDistinctId");
   }
 }
 
@@ -38,7 +50,17 @@ class _MixpanelDebugged extends _Mixpanel {
     debugPrint(msg);
 
     return await this.child.track(eventName, props);
-  }  
+  }
+
+  @override
+  Future<String> getDistinctId()async  {
+    String msg = """
+    Getting distinct Id
+    """;
+    debugPrint(msg);
+
+    return await this.child.getDistinctId();
+  }
 }
 
 class Mixpanel extends _Mixpanel {
@@ -65,6 +87,10 @@ class Mixpanel extends _Mixpanel {
 
   Future identify(String distinctId) {
     return this._mp.track('identify', distinctId);
+  }
+
+  Future<String> getDistinctId() {
+    return this._mp.getDistinctId();
   }
 
   Future alias(String alias) {

@@ -33,6 +33,9 @@ import Mixpanel
         Mixpanel.initialize(token: call.arguments as! String)
       } else if(call.method == "identify") {
         Mixpanel.mainInstance().identify(distinctId: call.arguments as! String)
+        Mixpanel.mainInstance().people.iden
+      } else if (call.method == "getDistinctId") {
+        result(Mixpanel.mainInstance().distinctId)
       } else if(call.method == "alias") {
         Mixpanel.mainInstance().createAlias(call.arguments as! String, distinctId: Mixpanel.mainInstance().distinctId)
       } else if(call.method == "setPeopleProperties") {
