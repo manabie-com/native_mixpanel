@@ -9,6 +9,8 @@ abstract class _Mixpanel {
   Future track(String eventName, [dynamic props]);
 
   Future<String> getDistinctId();
+
+  Future listenInAppMessage();
 }
 
 class _MixpanelOptedOut extends _Mixpanel {
@@ -22,6 +24,11 @@ class _MixpanelOptedOut extends _Mixpanel {
   Future<String> getDistinctId() {
     return Future.value('');
   }
+
+  @override
+  Future listenInAppMessage() {
+    return Future.value();
+  }
 }
 
 class _MixpanelOptedIn extends _Mixpanel {
@@ -34,6 +41,11 @@ class _MixpanelOptedIn extends _Mixpanel {
   @override
   Future<String> getDistinctId() async {
     return await _channel.invokeMethod("getDistinctId");
+  }
+
+  @override
+  Future listenInAppMessage() async {
+    return await _channel.invokeMethod("in_app_message");
   }
 }
 
@@ -60,6 +72,15 @@ class _MixpanelDebugged extends _Mixpanel {
     debugPrint(msg);
 
     return await this.child.getDistinctId();
+  }
+
+  @override
+  Future listenInAppMessage() async {
+    String msg = """
+    listening in app message
+    """;
+    debugPrint(msg);
+    return await this.child.listenInAppMessage();
   }
 }
 
@@ -115,5 +136,9 @@ class Mixpanel extends _Mixpanel {
 
   Future track(String eventName, [dynamic props]) {
     return this._mp.track(eventName, jsonEncode(props));
+  }
+
+  Future listenInAppMessage() {
+    return this._mp.listenInAppMessage();
   }
 }

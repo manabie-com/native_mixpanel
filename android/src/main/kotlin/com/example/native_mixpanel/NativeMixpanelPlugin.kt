@@ -8,19 +8,19 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import org.json.JSONObject
+import android.app.Activity
 
-class NativeMixpanelPlugin: MethodCallHandler {
+class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
 
   private var mixpanel: MixpanelAPI? = null
 
   companion object {
-
     var ctxt: Context? = null
     @JvmStatic
     fun registerWith(registrar: Registrar) {
       ctxt = registrar.context()
       val channel = MethodChannel(registrar.messenger(), "native_mixpanel")
-      channel.setMethodCallHandler(NativeMixpanelPlugin())
+      channel.setMethodCallHandler(NativeMixpanelPlugin(registrar.activity()))
     }
   }
 
@@ -60,6 +60,16 @@ class NativeMixpanelPlugin: MethodCallHandler {
     } else if (call.method == "flush") {
       mixpanel?.flush()
       result.success("Flush success..")
+    } else if (call.method == "in_app_message") {
+      try {
+        val inAppApplication = mixpanel?.people?.notificationIfAvailable
+        inAppApplication?.let {
+          mixpanel?.people?.showNotificationIfAvailable(activity)
+        }
+        result.success("Listening..")
+      } catch (ex: Exception) {
+        result.error("Error listening in app message", ex.toString(), null)
+      }
     } else {
       if(call.arguments == null) {
         mixpanel?.track(call.method)
