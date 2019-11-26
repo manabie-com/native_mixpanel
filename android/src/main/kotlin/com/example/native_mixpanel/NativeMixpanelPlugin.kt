@@ -61,15 +61,15 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
       mixpanel?.flush()
       result.success("Flush success..")
     } else if (call.method == "in_app_message") {
-      try {
-        val inAppApplication = mixpanel?.people?.notificationIfAvailable
-        inAppApplication?.let {
-          mixpanel?.people?.showNotificationIfAvailable(activity)
-        }
-        result.success("Listening..")
-      } catch (ex: Exception) {
-        result.error("Error listening in app message", ex.toString(), null)
-      }
+//      try {
+//        val inAppApplication = mixpanel?.people?.notificationIfAvailable
+//        inAppApplication?.let {
+//          mixpanel?.people?.showNotificationIfAvailable(activity)
+//        }
+//        result.success("Listening..")
+//      } catch (ex: Exception) {
+//        result.error("Error listening in app message", ex.toString(), null)
+//      }
     } else {
       if(call.arguments == null) {
         mixpanel?.track(call.method)

@@ -28,7 +28,7 @@ import Mixpanel
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult)  {
     do {
-      
+
       if (call.method == "initialize") {
         Mixpanel.initialize(token: call.arguments as! String)
       } else if(call.method == "identify") {
