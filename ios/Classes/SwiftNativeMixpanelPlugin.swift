@@ -28,7 +28,6 @@ import Mixpanel
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult)  {
     do {
-
       if (call.method == "initialize") {
         Mixpanel.initialize(token: call.arguments as! String)
       } else if(call.method == "identify") {
@@ -53,12 +52,17 @@ import Mixpanel
         Mixpanel.mainInstance().reset()
       } else if(call.method == "flush") {
         Mixpanel.mainInstance().flush()
-      } else if let argProperties = try self.getPropertiesFromArguments(callArguments: call.arguments) {
+      } else if (call.method == "in_app_message") {
+
+      } else if (call.method == "set_device_token") {
+        let deviceToken = call.arguments as! String
+        let data = Data(deviceToken.utf8)
+        Mixpanel.mainInstance().people.addPushDeviceToken(data);
+      }else if let argProperties = try self.getPropertiesFromArguments(callArguments: call.arguments) {
         Mixpanel.mainInstance().track(event: call.method, properties: argProperties)
       } else {
         Mixpanel.mainInstance().track(event: call.method)
       }
-
       result(true)
     } catch {
       print(error.localizedDescription)

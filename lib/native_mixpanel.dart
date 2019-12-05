@@ -5,16 +5,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart' show debugPrint;
 
 abstract class _Mixpanel {
-
   Future track(String eventName, [dynamic props]);
 
   Future<String> getDistinctId();
 
   Future listenInAppMessage();
+
+  Future setDeviceToken(String deviceToken);
 }
 
 class _MixpanelOptedOut extends _Mixpanel {
-
   Future track(String eventName, [dynamic props]) {
     // nothing to do when opted out
     return Future.value();
@@ -27,6 +27,11 @@ class _MixpanelOptedOut extends _Mixpanel {
 
   @override
   Future listenInAppMessage() {
+    return Future.value();
+  }
+
+  @override
+  Future setDeviceToken(String deviceToken) {
     return Future.value();
   }
 }
@@ -47,10 +52,14 @@ class _MixpanelOptedIn extends _Mixpanel {
   Future listenInAppMessage() async {
     return await _channel.invokeMethod("in_app_message");
   }
+
+  @override
+  Future setDeviceToken(String deviceToken) async {
+    return await _channel.invokeMethod("set_device_token", deviceToken);
+  }
 }
 
 class _MixpanelDebugged extends _Mixpanel {
-
   final _Mixpanel child;
 
   _MixpanelDebugged({this.child});
@@ -65,7 +74,7 @@ class _MixpanelDebugged extends _Mixpanel {
   }
 
   @override
-  Future<String> getDistinctId()async  {
+  Future<String> getDistinctId() async {
     String msg = """
     Getting distinct Id
     """;
@@ -82,10 +91,18 @@ class _MixpanelDebugged extends _Mixpanel {
     debugPrint(msg);
     return await this.child.listenInAppMessage();
   }
+
+  @override
+  Future setDeviceToken(String deviceToken) async {
+    String msg = """
+    Setting device token
+    """;
+    debugPrint(msg);
+    return await this.child.setDeviceToken(deviceToken);
+  }
 }
 
 class Mixpanel extends _Mixpanel {
-
   final bool shouldLogEvents;
   final bool isOptedOut;
 
@@ -95,11 +112,12 @@ class Mixpanel extends _Mixpanel {
     this.shouldLogEvents,
     this.isOptedOut,
   }) {
-
     _Mixpanel _mixpanel = isOptedOut ? _MixpanelOptedOut() : _MixpanelOptedIn();
 
-    if (shouldLogEvents) _mp = _MixpanelDebugged(child: _mixpanel);
-    else _mp = _mixpanel;
+    if (shouldLogEvents)
+      _mp = _MixpanelDebugged(child: _mixpanel);
+    else
+      _mp = _mixpanel;
   }
 
   Future initialize(String token) {
@@ -140,5 +158,10 @@ class Mixpanel extends _Mixpanel {
 
   Future listenInAppMessage() {
     return this._mp.listenInAppMessage();
+  }
+
+  @override
+  Future setDeviceToken(String deviceToken) {
+    return this._mp.setDeviceToken(deviceToken);
   }
 }

@@ -61,15 +61,23 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
       mixpanel?.flush()
       result.success("Flush success..")
     } else if (call.method == "in_app_message") {
-//      try {
-//        val inAppApplication = mixpanel?.people?.notificationIfAvailable
-//        inAppApplication?.let {
-//          mixpanel?.people?.showNotificationIfAvailable(activity)
-//        }
-//        result.success("Listening..")
-//      } catch (ex: Exception) {
-//        result.error("Error listening in app message", ex.toString(), null)
-//      }
+      try {
+        val inAppApplication = mixpanel?.people?.notificationIfAvailable
+        inAppApplication?.let {
+          result.success("Listening..")
+          mixpanel?.people?.showNotificationIfAvailable(activity)
+        }
+      } catch (ex: Exception) {
+        result.error("Error listening in app message", ex.toString(), null)
+      }
+    } else if (call.method == "set_device_token") {
+      try {
+        val deviceToken = call.arguments.toString()
+        mixpanel?.people?.pushRegistrationId = deviceToken
+        result.success("Set device token success..")
+      } catch (ex: Exception) {
+        result.error("Error register push device token", ex.toString(), null)
+      }
     } else {
       if(call.arguments == null) {
         mixpanel?.track(call.method)
