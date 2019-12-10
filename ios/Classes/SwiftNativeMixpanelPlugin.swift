@@ -60,9 +60,9 @@ import Mixpanel
       } else if (call.method == "fetch_notification") {
         Mixpanel.mainInstance().fetchNotificationPayload { value1 in }
       } else if (call.method == "set_device_token") {
-//        let deviceToken = call.arguments as! String
-//        let data = Data(deviceToken.utf8)
-//        Mixpanel.mainInstance().people.addPushDeviceToken(data);
+        let deviceToken = call.arguments as! String
+        let data = Data(deviceToken.utf8)
+        Mixpanel.mainInstance().people.addPushDeviceToken(data);
       } else if let argProperties = try self.getPropertiesFromArguments(callArguments: call.arguments) {
         Mixpanel.mainInstance().track(event: call.method, properties: argProperties)
       } else {
