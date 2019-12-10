@@ -9,6 +9,7 @@ import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import org.json.JSONObject
 import android.app.Activity
+import android.util.Log
 
 class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
 
@@ -27,6 +28,7 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
   override fun onMethodCall(call: MethodCall, result: Result) {
     if (call.method == "initialize") {
       mixpanel = MixpanelAPI.getInstance(ctxt, call.arguments.toString())
+      mixpanel?.setCurrentActivity(activity)
       result.success("Init success..")
     } else if (call.method == "getDistinctId") {
       result.success(mixpanel?.distinctId)
@@ -60,16 +62,8 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
     } else if (call.method == "flush") {
       mixpanel?.flush()
       result.success("Flush success..")
-    } else if (call.method == "in_app_message") {
-      try {
-        val inAppApplication = mixpanel?.people?.notificationIfAvailable
-        inAppApplication?.let {
-          result.success("Listening..")
-          mixpanel?.people?.showNotificationIfAvailable(activity)
-        }
-      } catch (ex: Exception) {
-        result.error("Error listening in app message", ex.toString(), null)
-      }
+    } else if (call.method == "fetch_notification") {
+      mixpanel?.installDecideCheck()
     } else if (call.method == "set_device_token") {
       try {
         val deviceToken = call.arguments.toString()
@@ -81,9 +75,12 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
     } else {
       if(call.arguments == null) {
         mixpanel?.track(call.method)
+        mixpanel?.people?.showNotificationIfAvailable(activity)
       } else {
+        mixpanel?.setCurrentActivity(activity)
         val json = JSONObject(call.arguments.toString())
         mixpanel?.track(call.method, json)
+        mixpanel?.people?.showNotificationIfAvailable(activity)
       }
       result.success("Track success..")
     }

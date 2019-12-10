@@ -30,8 +30,11 @@ import Mixpanel
     do {
       if (call.method == "initialize") {
         Mixpanel.initialize(token: call.arguments as! String)
+        Mixpanel.mainInstance().loggingEnabled = true
+        Mixpanel.mainInstance().showNotificationOnActive = true
       } else if(call.method == "identify") {
         Mixpanel.mainInstance().identify(distinctId: call.arguments as! String)
+       // Mixpanel.mainInstance().fetchNotificationPayload { value1 in }
       } else if (call.method == "getDistinctId") {
         result(Mixpanel.mainInstance().distinctId)
       } else if(call.method == "alias") {
@@ -54,11 +57,13 @@ import Mixpanel
         Mixpanel.mainInstance().flush()
       } else if (call.method == "in_app_message") {
 
+      } else if (call.method == "fetch_notification") {
+        Mixpanel.mainInstance().fetchNotificationPayload { value1 in }
       } else if (call.method == "set_device_token") {
-        let deviceToken = call.arguments as! String
-        let data = Data(deviceToken.utf8)
-        Mixpanel.mainInstance().people.addPushDeviceToken(data);
-      }else if let argProperties = try self.getPropertiesFromArguments(callArguments: call.arguments) {
+//        let deviceToken = call.arguments as! String
+//        let data = Data(deviceToken.utf8)
+//        Mixpanel.mainInstance().people.addPushDeviceToken(data);
+      } else if let argProperties = try self.getPropertiesFromArguments(callArguments: call.arguments) {
         Mixpanel.mainInstance().track(event: call.method, properties: argProperties)
       } else {
         Mixpanel.mainInstance().track(event: call.method)

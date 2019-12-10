@@ -42,5 +42,5 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //implementation "com.mixpanel.android:mixpanel-android:5.6.8"
-    implementation "com.github.phucgaoxam:mixpanel-android:5.6.9"
+    implementation "com.github.phucgaoxam:mixpanel-android:5.6.14"
 }

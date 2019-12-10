@@ -12,6 +12,8 @@ abstract class _Mixpanel {
   Future listenInAppMessage();
 
   Future setDeviceToken(String deviceToken);
+
+  Future fetchNotification();
 }
 
 class _MixpanelOptedOut extends _Mixpanel {
@@ -32,6 +34,11 @@ class _MixpanelOptedOut extends _Mixpanel {
 
   @override
   Future setDeviceToken(String deviceToken) {
+    return Future.value();
+  }
+
+  @override
+  Future fetchNotification() {
     return Future.value();
   }
 }
@@ -56,6 +63,11 @@ class _MixpanelOptedIn extends _Mixpanel {
   @override
   Future setDeviceToken(String deviceToken) async {
     return await _channel.invokeMethod("set_device_token", deviceToken);
+  }
+
+  @override
+  Future fetchNotification() async {
+    return await _channel.invokeMethod("fetch_notification");
   }
 }
 
@@ -99,6 +111,15 @@ class _MixpanelDebugged extends _Mixpanel {
     """;
     debugPrint(msg);
     return await this.child.setDeviceToken(deviceToken);
+  }
+
+  @override
+  Future fetchNotification() async {
+    String msg = """
+    Fetching notification
+    """;
+    debugPrint(msg);
+    return await this.child.fetchNotification();
   }
 }
 
@@ -163,5 +184,10 @@ class Mixpanel extends _Mixpanel {
   @override
   Future setDeviceToken(String deviceToken) {
     return this._mp.setDeviceToken(deviceToken);
+  }
+
+  @override
+  Future fetchNotification() {
+   return this._mp.fetchNotification();
   }
 }
