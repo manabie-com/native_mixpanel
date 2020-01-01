@@ -4,7 +4,7 @@ import UIKit
 import Mixpanel
 
 @objc public class SwiftNativeMixpanelPlugin: NSObject, FlutterPlugin {
-  
+
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "native_mixpanel", binaryMessenger: registrar.messenger())
     let instance = SwiftNativeMixpanelPlugin()

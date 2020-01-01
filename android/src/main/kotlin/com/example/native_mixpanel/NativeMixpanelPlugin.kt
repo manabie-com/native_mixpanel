@@ -9,7 +9,6 @@ import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import org.json.JSONObject
 import android.app.Activity
-import android.util.Log
 
 class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
 
@@ -63,7 +62,9 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
       mixpanel?.flush()
       result.success("Flush success..")
     } else if (call.method == "fetch_notification") {
+      mixpanel?.setCurrentActivity(activity)
       mixpanel?.installDecideCheck()
+      mixpanel?.people?.showNotificationIfAvailable(activity)
     } else if (call.method == "set_device_token") {
       try {
         val deviceToken = call.arguments.toString()
