@@ -27,7 +27,7 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
   override fun onMethodCall(call: MethodCall, result: Result) {
     if (call.method == "initialize") {
       mixpanel = MixpanelAPI.getInstance(ctxt, call.arguments.toString())
-    // mixpanel?.setCurrentActivity(activity)
+     mixpanel?.setCurrentActivity(activity)
       result.success("Init success..")
     } else if (call.method == "getDistinctId") {
       result.success(mixpanel?.distinctId)
@@ -62,8 +62,8 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
       mixpanel?.flush()
       result.success("Flush success..")
     } else if (call.method == "fetch_notification") {
-     // mixpanel?.setCurrentActivity(activity)
-     // mixpanel?.installDecideCheck()
+      mixpanel?.setCurrentActivity(activity)
+      mixpanel?.installDecideCheck()
       mixpanel?.people?.showNotificationIfAvailable(activity)
     } else if (call.method == "set_device_token") {
       try {
@@ -78,7 +78,7 @@ class NativeMixpanelPlugin(private val activity: Activity?): MethodCallHandler {
         mixpanel?.track(call.method)
         mixpanel?.people?.showNotificationIfAvailable(activity)
       } else {
-        //mixpanel?.setCurrentActivity(activity)
+        mixpanel?.setCurrentActivity(activity)
         val json = JSONObject(call.arguments.toString())
         mixpanel?.track(call.method, json)
         mixpanel?.people?.showNotificationIfAvailable(activity)
