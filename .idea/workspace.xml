@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.phucgaoxam/mixpanel-android/5.6.9/ca3a606b67e3e59e5961a578a3ece679f6578bd6/mixpanel-android-5.6.9-sources.jar!/com/mixpanel/android/mpmetrics/MixpanelAPI.java" description="public void showNotificationIfAvailable(Activity p..." line="1531" />
-    <bookmark url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.phucgaoxam/mixpanel-android/5.6.10/8aba7bec632af60b9be874c29e1c168655fb30b8/mixpanel-android-5.6.10-sources.jar!/com/mixpanel/android/mpmetrics/MixpanelAPI.java" description="public void showGivenNotification(InAppNotificatio..." line="1560" />
+    <bookmark url="file://$USER_HOME$/.pub-cache/git/native_mixpanel-6584b460c0cd175e5be55d11534b2914b9d4c4b4/lib/native_mixpanel.dart" description="Future setDeviceToken(String deviceToken);" line="13" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3837f44-89c5-421f-b10a-342f55ba8f91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/native_mixpanel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/native_mixpanel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/.idea/native_mixpanel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/.idea/native_mixpanel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/ios/Runner/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/ios/Classes/SwiftNativeMixpanelPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/native_mixpanel/ios/Classes/SwiftNativeMixpanelPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftNativeMixpanelPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftNativeMixpanelPlugin.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,49 +21,52 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/native_mixpanel.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1281">
+            <state relative-caret-position="-1730">
               <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+            <state relative-caret-position="867">
+              <caret line="44" column="63" lean-forward="true" selection-start-line="44" selection-start-column="63" selection-end-line="44" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftNativeMixpanelPlugin.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+            <state relative-caret-position="567">
+              <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/native_mixpanel_test.dart">
+        <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/native_mixpanel/NativeMixpanelPlugin.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="447">
+              <caret line="67" column="47" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/.gitignore">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -116,9 +110,9 @@
       <find>reset</find>
       <find>logging</find>
       <find>loggingEnabled</find>
-      <find>set_device_token</find>
       <find>MESSAGE_TYPE_COACH_AUTO</find>
       <find>fetch_notification</find>
+      <find>set_device_token</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/example/ios</dir>
@@ -132,18 +126,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/src/main/kotlin/com/example/native_mixpanel/NativeMixpanelPlugin.kt" />
         <option value="$PROJECT_DIR$/lib/native_mixpanel.dart" />
-        <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/src/main/kotlin/com/example/native_mixpanel/NativeMixpanelPlugin.kt" />
         <option value="$PROJECT_DIR$/ios/Classes/SwiftNativeMixpanelPlugin.swift" />
+        <option value="$PROJECT_DIR$/android/build.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="832" />
-    <option name="y" value="23" />
+    <option name="x" value="966" />
     <option name="width" value="954" />
-    <option name="height" value="1177" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -161,6 +154,62 @@
             <path>
               <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
               <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="native_mixpanel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="native_mixpanel" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -171,8 +220,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -216,11 +265,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="832" y="23" width="954" height="1177" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3114035" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18477103" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -237,6 +285,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32976827" />
       <window_info anchor="bottom" id="Messages" order="8" visible="true" weight="0.32976827" />
       <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="right" id="make" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" />
@@ -298,9 +347,6 @@
     <entry file="file://$PROJECT_DIR$/ios/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ios/Classes/NativeMixpanelPlugin.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -353,31 +399,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+    <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftNativeMixpanelPlugin.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/native_mixpanel/NativeMixpanelPlugin.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="567">
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/native_mixpanel.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
+        <state relative-caret-position="-1730">
           <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Classes/SwiftNativeMixpanelPlugin.swift">
+    <entry file="file://$PROJECT_DIR$/android/src/main/kotlin/com/example/native_mixpanel/NativeMixpanelPlugin.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+        <state relative-caret-position="447">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="44" column="63" lean-forward="true" selection-start-line="44" selection-start-column="63" selection-end-line="44" selection-end-column="63" />
         </state>
       </provider>
     </entry>

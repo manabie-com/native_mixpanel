@@ -62,6 +62,7 @@ import Mixpanel
       } else if (call.method == "set_device_token") {
         let deviceToken = call.arguments as! String
         let data = Data(deviceToken.utf8)
+        print("sending token" + deviceToken + deviceTokenDataToString(data))
         Mixpanel.mainInstance().people.addPushDeviceToken(data);
       } else if let argProperties = try self.getPropertiesFromArguments(callArguments: call.arguments) {
         Mixpanel.mainInstance().track(event: call.method, properties: argProperties)
@@ -74,4 +75,15 @@ import Mixpanel
       result(false)
     }
   }
+    
+    private func deviceTokenDataToString(_ deviceToken: Data) -> String {
+        let tokenChars = (deviceToken as NSData).bytes.assumingMemoryBound(to: CChar.self)
+        var tokenString = ""
+
+        for i in 0..<deviceToken.count {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+
+        return tokenString
+    }
 }
